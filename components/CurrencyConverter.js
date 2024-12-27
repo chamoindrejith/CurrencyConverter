@@ -97,14 +97,14 @@ export default function CurrencyConverter() {
               <Text variant="titleLarge" style={styles.display}>
                 {value && targetValue
                   ? convertedAmount
-                  : "Please select the source and target currency"}
+                  : <Text style={styles.error}>Please select the source and target currency</Text>}
               </Text>
             </View>
           </Card.Content>
         </Card>
         <Button
           mode="contained"
-          theme={{ colors: { primary: "green" } }}
+          theme={{ colors: { primary: "#008CBA" } }}
           style={styles.button}
           onPress={() => conversion()}
         >
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     padding: 10,
-    backgroundColor:"rgba(236, 191, 66, 0.24)",
+    backgroundColor:"rgba(161, 215, 231, 0.1)",
   },
   body: {
     flex: 10,
@@ -139,18 +139,20 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     backgroundColor:"rgba(161, 215, 231, 0.1)",
-    padding: 120,
+    padding: 90,
   },
   input: {
     padding: 8,
     marginBottom: 10,
   },
   card: {
+    padding: 10,
     marginBottom: 10,
   },
   button: {
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: 20,
+    marginTop: 20,
+    padding: 5,
   },
   divider: {
     marginBottom: 10,
@@ -164,4 +166,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign:"right"
   },
+  error:{
+    color:"red",
+    fontWeight: "bold",
+    textAlign:"center",
+    padding:10,
+  }
 });
